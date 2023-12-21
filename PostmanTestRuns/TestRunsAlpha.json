@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "515c9ebf-f646-4c3a-9914-8fae270c5758",
+		"name": "testRunAlpha",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createDomain",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e8f4d374-96f8-496d-a023-df2e3fea1047",
+						"exec": [
+							"const domainId = pm.response.json().id;",
+							"",
+							"pm.environment.set('domainId', domainId);",
+							"",
+							"pm.test(\"create Domain\", function() {",
+							"    var jsonDt = pm.response.json();",
+							"    pm.expect(jsonDt.name).to.eql(\"TestBackfillDomainAlpha0\")",
+							"});",
+							"",
+							"postman.setNextRequest(\"createEnvBluePrint\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "47051541-021a-4a4c-9146-d3dd133943a5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"TestBackfillDomainAlpha0\",\n  \"domainExecutionRole\": \"arn:aws:iam::062001084521:role/AmazonDataZoneDomainExecutionRole\"\n}"
+				},
+				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains"
+			},
+			"response": []
+		},
+		{
+			"name": "createProject",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6a78ead-8747-44e3-953f-fce3cc0349fd",
+						"exec": [
+							"const projectIdentifier = pm.response.json().projectIdentifier;",
+							"",
+							"pm.environment.set('projectIdentifier', projectIdentifier);",
+							"",
+							"pm.test(\"create Project\", function() {",
+							"    var jsonDt = pm.response.json();",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"postman.setNextRequest(\"createEnvBluePrint\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "d8f7f087-ae26-4290-bac0-237dd0005dc4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"testProject1\"\n}"
+				},
+				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/projects"
+			},
+			"response": []
+		},
+		{
+			"name": "createEnvBluePrint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fa5642b-743d-4fae-b51d-5bd7b4abf5a1",
+						"exec": [
+							"const environmentBlueprintIdentifier = pm.response.json().environmentBlueprintIdentifier;",
+							"",
+							"pm.environment.set('environmentBlueprintIdentifier', environmentBlueprintIdentifier);",
+							"",
+							"pm.test(\"create EnvProfile\", function() {",
+							"    var jsonDt = pm.response.json();",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"postman.setNextRequest(\"createEnvProfile\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "524997ee-766e-455c-8457-f6c0c51d3aef",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"provisioningProperties\": {\n                \"cloudFormation\": {\n                    \"templateUrl\": \"https://blueprint-accesspoin-g8sw8spcmabz9fmho3r9irpe1zfk4use1b-s3alias.s3-accesspoint.us-east-1.amazonaws.com/v1/DataZone-DataWarehouseDefault-dev-20230627.template.json\"\n                }\n            },\n    \"provider\": \"DataZone\",\n    \"name\": \"testEnvBlueprint2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/environment-blueprints"
+			},
+			"response": []
+		},
+		{
+			"name": "createEnvProfile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4bf1ffa4-5975-4cb4-957e-76b79eeb803a",
+						"exec": [
+							"const environmentBlueprintIdentifier = pm.environment.get('environmentBlueprintIdentifier');",
+							"const projectIdentifier = pm.environment.get('projectIdentifier');",
+							"",
+							"const environmentProfileIdentifier = pm.response.json().environmentProfileIdentifier;",
+							"pm.environment.set('environmentProfileIdentifier', environmentProfileIdentifier);",
+							"",
+							"const requestBody = {",
+							"    environmentBlueprintIdentifier: environmentBlueprintIdentifier,",
+							"    name : \"testEnvironmentProfile2\",",
+							"    projectIdentifier: projectIdentifier,",
+							"    region: \"us-east-1\",",
+							"    awsAccountId: \"811898667211\"",
+							"}",
+							"",
+							"pm.request.body = {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify(requestBody),",
+							"};",
+							"",
+							"pm.test(\"create EnvProfile\", function() {",
+							"    var jsonDt = pm.response.json();",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"postman.setNextRequest(\"createEnvironment\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "259b1ec4-525f-41be-b66c-5c513ceca557",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"environmentBlueprintIdentifier\": \"6ww1dcqfcslelj\",\n    \"name\": \"testEnvironmentProfile2\",\n    \"projectIdentifier\": \"dtfwc78ftethk7\",\n    \"region\": \"us-east-1\",\n    \"awsAccountId\": \"811898667211\"\n}"
+				},
+				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/environment-profiles"
+			},
+			"response": []
+		},
+		{
+			"name": "createEnvironment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65df6fb9-a2ec-4395-8bd4-c078113d03da",
+						"exec": [
+							"const projectIdentifier = pm.environment.get('projectIdentifier');",
+							"const environmentProfileIdentifier = pm.environment.get('const environmentProfileIdentifier');",
+							"",
+							"const requestBody = {",
+							"    environmentProfileIdentifier: environmentProfileIdentifier,",
+							"    name : \"testEnvironment2\",",
+							"    projectIdentifier: projectIdentifier,",
+							"    region: \"us-east-1\",",
+							"}",
+							"",
+							"pm.request.body = {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify(requestBody),",
+							"};",
+							"",
+							"pm.test(\"create Environment\", function() {",
+							"    var jsonDt = pm.response.json();",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"postman.setNextRequest(\"createAssetType\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2b157aa2-3ed0-4bc8-86e5-e157df294c4d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"environmentProfileIdentifier\": \"drrgzkcdjfcb3b\",\n    \"name\": \"testEnvironment2\",\n    \"projectIdentifier\": \"dtfwc78ftethk7\",\n    \"region\" : \"us-east-1\"\n}"
+				},
+				"url": {
+					"raw": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/environments",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"us-east-1",
+						"alpha",
+						"api",
+						"niceland",
+						"aws",
+						"dev"
+					],
+					"path": [
+						"v2",
+						"domains",
+						"dzd_bx3s94knl0hdt3",
+						"environments"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "us-east-1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "awsAccountId",
+							"value": "811898667211",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createAssetType",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "056b7fbf-bd1b-480c-8d49-ba2d0fec0d76",
+						"exec": [
+							"const owningProjectIdentifier = pm.environment.get('projectIdentifier');",
+							"",
+							"const typeIdentifier = pm.response.json().typeIdentifier;",
+							"pm.environment.set('typeIdentifier', typeIdentifier);",
+							"",
+							"const requestBody = {",
+							"    owningProjectIdentifier: owningProjectIdentifier,",
+							"    name : \"testAssetType2\",",
+							"    formsInput: {},",
+							"}",
+							"",
+							"pm.request.body = {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify(requestBody),",
+							"};",
+							"",
+							"pm.test(\"create asset type\", function() {",
+							"    var jsonDt = pm.response.json();",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"postman.setNextRequest(\"createAsset\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "749c00c0-93d7-440b-9191-d1aed2916838",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"owningProjectIdentifier\" : \"dtfwc78ftethk7\",\n    \"name\": \"testAssetType2\",\n    \"formsInput\": {}\n}"
+				},
+				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/asset-types"
+			},
+			"response": []
+		},
+		{
+			"name": "createAsset",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a12cf3ac-6e05-4a58-80d0-bd0040fd8aaa",
+						"exec": [
+							"const owningProjectIdentifier = pm.environment.get('projectIdentifier');",
+							"const typeIdentifier = pm.environment.get('typeIdentifier');",
+							"",
+							"const requestBody = {",
+							"    owningProjectIdentifier: owningProjectIdentifier,",
+							"    name : \"testAsset2\",",
+							"    typeIdentifier: typeIdentifier,",
+							"}",
+							"",
+							"pm.request.body = {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify(requestBody),",
+							"};",
+							"",
+							"pm.test(\"create asset\", function() {",
+							"    var jsonDt = pm.response.json();",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"postman.setNextRequest(\"createDataProducts\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "eaab0ade-53b7-477f-a6f5-dafcc9cc9b87",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"owningProjectIdentifier\": \"dtfwc78ftethk7\",\n    \"name\": \"testAsset2\",\n    \"typeIdentifier\": \"testAssetType2\"\n}"
+				},
+				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/assets"
+			},
+			"response": []
+		},
+		{
+			"name": "createDataProducts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a257121f-eddd-4fb3-bdd4-16c71a1faf83",
+						"exec": [
+							"const owningProjectIdentifier = pm.environment.get('projectIdentifier');",
+							"",
+							"const requestBody = {",
+							"    owningProjectIdentifier: owningProjectIdentifier,",
+							"    name : \"testDataProduct2\",",
+							"}",
+							"",
+							"pm.request.body = {",
+							"    mode: 'raw',",
+							"    raw: JSON.stringify(requestBody),",
+							"};",
+							"",
+							"pm.test(\"create DataProduct\", function() {",
+							"    var jsonDt = pm.response.json();",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"postman.setNextRequest(\"createDataSource\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "db5098ac-96b0-4053-bcee-4547ec57e0f3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"owningProjectIdentifier\": \"dtfwc78ftethk7\",\n    \"name\":\"testDataProduct2\"\n}"
+				},
+				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/data-products"
+			},
+			"response": []
+		},
+		{
+			"name": "createDataSource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "774c00f2-ed6d-41ed-8e33-8f1cdffe86fc",
+						"exec": [
+							"const projectIdentifier = pm.environment.get('projectIdentifier');",
+							"",
+							"pm.test(\"create EnvProfile\", function() {",
+							"    var jsonDt = pm.response.json();",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"postman.setNextRequest(null);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "38bff171-08b9-401a-b02c-836fca24b9af",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"environmentIdentifier\": \"\",\n  \"type\": \"GLUE\",\n  \"name\": \"testDataSource2\",\n  \"projectIdentifier\": \"dtfwc78ftethk7\"\n}"
+				},
+				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/data-sources"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "awsv4",
+		"awsv4": {
+			"service": "datazone",
+			"region": "us-east-1",
+			"sessionToken": "IQoJb3JpZ2luX2VjEI///////////wEaCXVzLWVhc3QtMSJHMEUCIFbz1Gv9Vi0ZvL3Vk2MKAQXl7vdeXd3N9id9Ehtub0JpAiEApWVAE8GpzuPK6Yjznix1noheX43xmJa/jcs6IkMLBJoqnwIIGBABGgwwNjIwMDEwODQ1MjEiDF6LfwisyGpaIv/btir8AQE3ASK+juNUngQxYKFduaB3+VZ9uNcj2efprz8MXBYjfgAsfGrrEi+pIZwObpGXH1hUTEZfLiqE4J0ALAHEozjIFN94BRLlXE1AgBwD463GXY4kgxDJGBpft698BcEXA8668nB43XpAUKjsBP5DCsMb5p0qZ98EH1v3Elv/DXyhcB7V4XjFxJRDEFQv/lEzcWKuBF2sJRehDZQiKe+W9a3eDiQ7k8dI4nHwrXXXvAIJzUHSvSII+0NDqvS86FnYylonOElxQmZOF9g7L8mynehSIArk9qZnc9zWap5H7GbS8qwN2qiV+byofnDo2sKEFjrzj9JvQi+axK4YgjDgnJGsBjqdAf+PR6+Duwvm5Dy25rd91zP3Gkl7c799RdsE9R1I7ml7yZd8CP3MXvoFkalsJHgRsAE8O4wZvAVc+UJk/7rfV0TxdXXY0lX+41Y3lDoLHEyHHL8cW0iRPfnXABYWC6X1IgX9BNSa/+cawrH51yY2zKmAxIfLLYacZDZThWFYi/D8ORylHwTRGUVEPJYnKXvw7i9l2BuodrLMWZm13JA=",
+			"secretKey": "4JjOEB+Toi4hL6VRvZDL+sFr8Ong3t2w+e+BZIhL",
+			"accessKey": "ASIAQ434NPBUT4HPPNV2"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7a8c6777-2011-43d5-a2b1-c1a9f35fa332",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "adfa25c5-ba41-4099-8663-fc608f2bd980",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
