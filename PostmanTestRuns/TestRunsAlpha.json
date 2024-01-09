@@ -77,7 +77,7 @@
 					"mode": "raw",
 					"raw": "{\n  \"name\": \"testProject1\"\n}"
 				},
-				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/projects"
+				"url": "https://datazone.us-east-1.api.aws/v2/domains/dzd_cihwoxhr12r8yv/projects"
 			},
 			"response": []
 		},
