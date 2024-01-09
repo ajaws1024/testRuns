@@ -87,7 +87,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6fa5642b-743d-4fae-b51d-5bd7b4abf5a1",
+						"id": "31c418b4-2937-4133-86e2-8e85b2b31f28",
 						"exec": [
 							"const environmentBlueprintIdentifier = pm.response.json().environmentBlueprintIdentifier;",
 							"",
@@ -120,7 +120,7 @@
 						}
 					}
 				},
-				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/environment-blueprints"
+				"url": "https://datazone.us-east-1.api.aws/v2/domains/dzd_cihwoxhr12r8yv/environment-blueprints"
 			},
 			"response": []
 		},
