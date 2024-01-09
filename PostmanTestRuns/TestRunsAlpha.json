@@ -442,18 +442,18 @@
 	"auth": {
 		"type": "awsv4",
 		"awsv4": {
+			"sessionToken": "IQoJb3JpZ2luX2VjEFwaCXVzLWVhc3QtMSJGMEQCIGgxUwVUjEd9R37rUatKvy9eiwKG3KyeFImMZPKh8YLRAiA8xKj99k5wqMSl8kUe2KQYJXtix2zJyVa3kLlJbwChhCqoAgj1//////////8BEAEaDDA2MjAwMTA4NDUyMSIMu7h9CPAf5DWyKyDKKvwBeRQl5k2Zshe72m576bGXOyztDRYVeowUCqAiTN2xA1ZK5L5yOGO0rJ3MGHJzJg1TUtg1MLW9SYeyQb2d6fuLdHo28Ww1JuTeUCYovla6gJX6vjwKWwNRP2XKJwjAzeJo2HALYhPFcEziRzGC0/YqzkJl0AlxTYwvePsFsbHBQZLhk4zeJJICnwOp4lbpoGwL1r0twrzvuNckO1v1Db2FhjjDMgTixyuxlnS72MIb/pUGEQm4kJv1NVxy/yAwBT1eik+MUatRZ72k0Ul5DrJunVAjdEkaMMxQKmzJLf7ePgJVDuhzDETnTQtd4ZGkkzmMk6EiJTinbM8jAVBwMKq+9qwGOp4BzbbRBoQkAFh6X+45ZAVY2Cn7pm2U6CqRtZp/DZ4xFd3fhuEjKZzYcFwaS/zK8+NCVkTohVLWz/rgdFkHeYCa0ksvkWjdd1+z5OTT9MYC/1+qHL+G83fwKU/iL7HLwhUQdZTmW9VHU1xPKSn/86gNn8svy7izxe9JTPWramiWVSqaVtwAqfauKxZbV1me8UlAbhOWIiP7xzp3F8wCFNA=",
+			"secretKey": "slSUDNZt/AM0YRS7tCI+hAcSOnTo/eKm8M6dPxJ2",
+			"accessKey": "ASIAQ434NPBUS2AVZUV2",
 			"service": "datazone",
-			"region": "us-east-1",
-			"sessionToken": "IQoJb3JpZ2luX2VjEI///////////wEaCXVzLWVhc3QtMSJHMEUCIFbz1Gv9Vi0ZvL3Vk2MKAQXl7vdeXd3N9id9Ehtub0JpAiEApWVAE8GpzuPK6Yjznix1noheX43xmJa/jcs6IkMLBJoqnwIIGBABGgwwNjIwMDEwODQ1MjEiDF6LfwisyGpaIv/btir8AQE3ASK+juNUngQxYKFduaB3+VZ9uNcj2efprz8MXBYjfgAsfGrrEi+pIZwObpGXH1hUTEZfLiqE4J0ALAHEozjIFN94BRLlXE1AgBwD463GXY4kgxDJGBpft698BcEXA8668nB43XpAUKjsBP5DCsMb5p0qZ98EH1v3Elv/DXyhcB7V4XjFxJRDEFQv/lEzcWKuBF2sJRehDZQiKe+W9a3eDiQ7k8dI4nHwrXXXvAIJzUHSvSII+0NDqvS86FnYylonOElxQmZOF9g7L8mynehSIArk9qZnc9zWap5H7GbS8qwN2qiV+byofnDo2sKEFjrzj9JvQi+axK4YgjDgnJGsBjqdAf+PR6+Duwvm5Dy25rd91zP3Gkl7c799RdsE9R1I7ml7yZd8CP3MXvoFkalsJHgRsAE8O4wZvAVc+UJk/7rfV0TxdXXY0lX+41Y3lDoLHEyHHL8cW0iRPfnXABYWC6X1IgX9BNSa/+cawrH51yY2zKmAxIfLLYacZDZThWFYi/D8ORylHwTRGUVEPJYnKXvw7i9l2BuodrLMWZm13JA=",
-			"secretKey": "4JjOEB+Toi4hL6VRvZDL+sFr8Ong3t2w+e+BZIhL",
-			"accessKey": "ASIAQ434NPBUT4HPPNV2"
+			"region": "us-east-1"
 		}
 	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7a8c6777-2011-43d5-a2b1-c1a9f35fa332",
+				"id": "22c76c06-c68d-4f4b-abdb-7690cde8eaff",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -463,7 +463,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "adfa25c5-ba41-4099-8663-fc608f2bd980",
+				"id": "5912731e-01fa-4ad4-bd39-eccdd31ea219",
 				"type": "text/javascript",
 				"exec": [
 					""
