@@ -39,7 +39,7 @@
 					"mode": "raw",
 					"raw": "{\n  \"name\": \"TestBackfillDomainAlpha0\",\n  \"domainExecutionRole\": \"arn:aws:iam::062001084521:role/AmazonDataZoneDomainExecutionRole\"\n}"
 				},
-				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains"
+				"url": "https://datazone.us-east-1.api.aws/v2/domains/"
 			},
 			"response": []
 		},
