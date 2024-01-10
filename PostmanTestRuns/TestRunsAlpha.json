@@ -113,7 +113,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"provisioningProperties\": {\n                \"cloudFormation\": {\n                    \"templateUrl\": \"https://blueprint-accesspoin-g8sw8spcmabz9fmho3r9irpe1zfk4use1b-s3alias.s3-accesspoint.us-east-1.amazonaws.com/v1/DataZone-DataWarehouseDefault-dev-20230627.template.json\"\n                }\n            },\n    \"provider\": \"DataZone\",\n    \"name\": \"testEnvBlueprint2\"\n}",
+					"raw": "{\n    \"provisioningProperties\": {\n                \"cloudFormation\": {\n                    \"templateUrl\": \"https://blueprint-accesspoin-g8sw8spcmabz9fmho3r9irpe1zfk4use1b-s3alias.s3-accesspoint.us-east-1.amazonaws.com/v1/DataZone-DataWarehouseDefault-dev-20230627.template.json\"\n                }\n            },\n    \"provider\": \"DataZone\",\n    \"name\": \"testEnvBlueprint1\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
