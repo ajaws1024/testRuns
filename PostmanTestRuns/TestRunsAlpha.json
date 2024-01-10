@@ -171,9 +171,9 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"environmentBlueprintIdentifier\": \"6ww1dcqfcslelj\",\n    \"name\": \"testEnvironmentProfile2\",\n    \"projectIdentifier\": \"dtfwc78ftethk7\",\n    \"region\": \"us-east-1\",\n    \"awsAccountId\": \"811898667211\"\n}"
+					"raw": "{\n    \"environmentBlueprintIdentifier\": \"6ww1dcqfcslelj\",\n    \"name\": \"testEnvironmentProfile1\",\n    \"projectIdentifier\": \"b9hcqbetuelovb\",\n    \"region\": \"us-east-1\",\n    \"awsAccountId\": \"811898667211\"\n}"
 				},
-				"url": "https://gateway.us-east-1.alpha.api.niceland.aws.dev/v2/domains/dzd_bx3s94knl0hdt3/environment-profiles"
+				"url": "https://datazone.us-east-1.api.aws/v2/domains/dzd_cihwoxhr12r8yv/environment-profiles"
 			},
 			"response": []
 		},
@@ -442,9 +442,9 @@
 	"auth": {
 		"type": "awsv4",
 		"awsv4": {
-			"sessionToken": "IQoJb3JpZ2luX2VjEFwaCXVzLWVhc3QtMSJGMEQCIGgxUwVUjEd9R37rUatKvy9eiwKG3KyeFImMZPKh8YLRAiA8xKj99k5wqMSl8kUe2KQYJXtix2zJyVa3kLlJbwChhCqoAgj1//////////8BEAEaDDA2MjAwMTA4NDUyMSIMu7h9CPAf5DWyKyDKKvwBeRQl5k2Zshe72m576bGXOyztDRYVeowUCqAiTN2xA1ZK5L5yOGO0rJ3MGHJzJg1TUtg1MLW9SYeyQb2d6fuLdHo28Ww1JuTeUCYovla6gJX6vjwKWwNRP2XKJwjAzeJo2HALYhPFcEziRzGC0/YqzkJl0AlxTYwvePsFsbHBQZLhk4zeJJICnwOp4lbpoGwL1r0twrzvuNckO1v1Db2FhjjDMgTixyuxlnS72MIb/pUGEQm4kJv1NVxy/yAwBT1eik+MUatRZ72k0Ul5DrJunVAjdEkaMMxQKmzJLf7ePgJVDuhzDETnTQtd4ZGkkzmMk6EiJTinbM8jAVBwMKq+9qwGOp4BzbbRBoQkAFh6X+45ZAVY2Cn7pm2U6CqRtZp/DZ4xFd3fhuEjKZzYcFwaS/zK8+NCVkTohVLWz/rgdFkHeYCa0ksvkWjdd1+z5OTT9MYC/1+qHL+G83fwKU/iL7HLwhUQdZTmW9VHU1xPKSn/86gNn8svy7izxe9JTPWramiWVSqaVtwAqfauKxZbV1me8UlAbhOWIiP7xzp3F8wCFNA=",
-			"secretKey": "slSUDNZt/AM0YRS7tCI+hAcSOnTo/eKm8M6dPxJ2",
-			"accessKey": "ASIAQ434NPBUS2AVZUV2",
+			"sessionToken": "IQoJb3JpZ2luX2VjEG8aCXVzLWVhc3QtMSJHMEUCIQCDcDHdBMJY4nfFhyfpV2Tq8QqGCqwIi1LpsBlMtTczDwIgY8VxEUUPZZvXgpNc35nFvblMQVfeODh7TqiXRCm/w2YqnwIIGBABGgwwNjIwMDEwODQ1MjEiDGek7nj2vhFjpe+MASr8ARgC9G6ThCu3j2dhi+t01Aw8qiurWfUODchukuVqcGmoKUQzgzFWBfmu3QFuP8WSo4yDFMP+YUjS+sK+U8E3/3+c8EZPJdGSkkH/qdXhewuw4uezGeYFxYCefJZ0UnQLNGqMR0J/A2UvGaiVXAXS7p1Q2wXJ5vmA/IspAAyKd5eWPE0/Xin1pQ7zmLbl+YXbNSDDMzH4ZHnoUjlIgDSe9H13LeNaeeQPd1KknuBMSL88CDSlxmrQwoTLs5/f0bOob/k0pmzMbJcmL9KiDFnVGmL3d5okHDPk6/BdQXafVFzPgvQ3GJ6x+gbmYw2W3Ox4P2C8ZTwvDvq1JDNP+jCh1/qsBjqdATKfwcsD9PB7ZmqAgEPuHWI8tL9f1T/E8OPgAs4P/KSjjtxvcSB0z1BT9oLg+NIpntHa84iSG44YUAezIR3U5+y3A58ug3XdJ7v5kVLWVrlmeAAww9n8GTMm+hz8/9YyvE6VjkcXCaQEa4p7PLupUXrPTOeLE02skaGN7rhGrgPSNJ6iPn5dRgYqfu/ZwzspY4qQgf6k07bTit2opAM=",
+			"secretKey": "imIDg0F2IjeKstznMnPV2igltqVMjnxYuVtjJoxG",
+			"accessKey": "ASIAQ434NPBUSAFFXKGH",
 			"service": "datazone",
 			"region": "us-east-1"
 		}
@@ -453,7 +453,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "22c76c06-c68d-4f4b-abdb-7690cde8eaff",
+				"id": "7961c86e-3da0-4248-a254-3471e3e580a8",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -463,7 +463,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5912731e-01fa-4ad4-bd39-eccdd31ea219",
+				"id": "146aa7c9-6264-4e9d-aee4-a8b1def10794",
 				"type": "text/javascript",
 				"exec": [
 					""
