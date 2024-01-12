@@ -442,9 +442,9 @@
 	"auth": {
 		"type": "awsv4",
 		"awsv4": {
-			"sessionToken": "IQoJb3JpZ2luX2VjEG8aCXVzLWVhc3QtMSJHMEUCIQCDcDHdBMJY4nfFhyfpV2Tq8QqGCqwIi1LpsBlMtTczDwIgY8VxEUUPZZvXgpNc35nFvblMQVfeODh7TqiXRCm/w2YqnwIIGBABGgwwNjIwMDEwODQ1MjEiDGek7nj2vhFjpe+MASr8ARgC9G6ThCu3j2dhi+t01Aw8qiurWfUODchukuVqcGmoKUQzgzFWBfmu3QFuP8WSo4yDFMP+YUjS+sK+U8E3/3+c8EZPJdGSkkH/qdXhewuw4uezGeYFxYCefJZ0UnQLNGqMR0J/A2UvGaiVXAXS7p1Q2wXJ5vmA/IspAAyKd5eWPE0/Xin1pQ7zmLbl+YXbNSDDMzH4ZHnoUjlIgDSe9H13LeNaeeQPd1KknuBMSL88CDSlxmrQwoTLs5/f0bOob/k0pmzMbJcmL9KiDFnVGmL3d5okHDPk6/BdQXafVFzPgvQ3GJ6x+gbmYw2W3Ox4P2C8ZTwvDvq1JDNP+jCh1/qsBjqdATKfwcsD9PB7ZmqAgEPuHWI8tL9f1T/E8OPgAs4P/KSjjtxvcSB0z1BT9oLg+NIpntHa84iSG44YUAezIR3U5+y3A58ug3XdJ7v5kVLWVrlmeAAww9n8GTMm+hz8/9YyvE6VjkcXCaQEa4p7PLupUXrPTOeLE02skaGN7rhGrgPSNJ6iPn5dRgYqfu/ZwzspY4qQgf6k07bTit2opAM=",
-			"secretKey": "imIDg0F2IjeKstznMnPV2igltqVMjnxYuVtjJoxG",
-			"accessKey": "ASIAQ434NPBUSAFFXKGH",
+			"sessionToken": "IQoJb3JpZ2luX2VjEKL//////////wEaCXVzLWVhc3QtMSJIMEYCIQCkJihSQ1Jxpx+ooxcpiP4tmpLw3iw9GU1dM6wTTIXZ3AIhAN6yI8+7dqWTx/x3f7APOhunxyrTX7h4DKEs4LylyL7PKp8CCEoQABoMNzU2NzY4NjY4NDg5IgzC7cLHEyxAjXFJ5mMq/AFflSUJ1PedeuB6wsdTBmF5wLP79DfOLJYTaq9yHrWHRnk2kmVt+tGw6uvoz+oLVp5nkJq0lyq2sSSjwX4UO1OAc4xLd7wJ3xG0rN2Py6fKo41gzBe7D/Kg6b20+6gySuJTAhuxWZKoiuO6b4K38wZmjw+aISHzclRnfWcXdBAAA2KOXEr3/Mv1WOOlp8Mk3TWpEKMdwMeDfYvnZn7TJ6e6T3p+12k/+XcA6qAZDn6EdcUsaTFvadl93CXtuvmIsbAjyQKfcESHwaI/QSfgQpXdFq+uxwBFZ76+RJkNS8mlJcSDLAJISIPaggQ9jCNdAcEpCuyF9OARW7mbTEQwk+eFrQY6nAHG2ZiyaazxlMpDsAGMgjDbtBdZ6zw9tAFoG8mGOiVu2tXWKoAsiGoihiFc6mq/5AqO451rtd/w3rVr9ugARMmnGFKt6Lg7id/P+u56Pvpurf9dJrkaEvuokHljw8evVujEljNOe8JjqwG6mzjL597vevl8qndYZPvcu4SeyPq/znk480/bS4qDksA/435CbWSMz7c2w1GXv0DPEEU=",
+			"secretKey": "cBFn0uo9Tzj+hkxywGMVxCCgWb1769S100zOh+d1",
+			"accessKey": "ASIA3AMXNPNEXTDE25X7",
 			"service": "datazone",
 			"region": "us-east-1"
 		}
@@ -453,7 +453,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7961c86e-3da0-4248-a254-3471e3e580a8",
+				"id": "7ba55aa3-0776-4cde-85e1-4c141a9fd116",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -463,7 +463,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "146aa7c9-6264-4e9d-aee4-a8b1def10794",
+				"id": "bc1e7afc-836d-4463-9942-daf716160587",
 				"type": "text/javascript",
 				"exec": [
 					""
