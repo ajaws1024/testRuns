@@ -77,7 +77,7 @@
 					"mode": "raw",
 					"raw": "{\n  \"name\": \"testProject1\"\n}"
 				},
-				"url": "https://datazone.us-east-1.api.aws/v2/domains/dzd_cihwoxhr12r8yv/projects"
+				"url": "https://datazone.us-east-1.api.aws/v2/domains/dzd_b0ce685mfm1a1z/projects"
 			},
 			"response": []
 		},
